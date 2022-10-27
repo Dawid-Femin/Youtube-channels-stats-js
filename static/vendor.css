@@ -243,6 +243,9 @@ button:-moz-focusring {
 }
 
 /* MY CSS STARTED HERE */
+.hide {
+  display: none;
+}
 /* Min-width: 360px */
 @media only screen and (min-width: 360px) {
   .wrapper__main {
@@ -297,10 +300,6 @@ button:-moz-focusring {
     margin: 5px;
   }
 }
-
-
-
-
 
 @media only screen and (min-width: 544px) {
   .sort {

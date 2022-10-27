@@ -2,6 +2,9 @@ const channelsTemplate = document.querySelector('[channel-container-template]');
 const channelsContainer = document.querySelector('[data-channels-container]');
 const radioInputs = document.querySelectorAll('input[name="sort"]');
 const reverseButton = document.querySelector('#reverse');
+const searchInput = document.querySelector('.filter__input');
+
+let channelInfo = [];
 
 main();
 
@@ -17,7 +20,7 @@ function main() {
 };
 
 function addChannels(data, element) {
-    data.forEach(item => {
+    channelInfo = data.map(item => {
         const channel = channelsTemplate.content.cloneNode(true).children[0];
 
         //assigned selectors to variable
@@ -38,6 +41,8 @@ function addChannels(data, element) {
         views.textContent = removeSign(item.statistics.viewCount).toLocaleString('en');
 
         element.append(channel);
+
+        return { name: item.title, element: channel };
     });
 };
 
@@ -97,3 +102,11 @@ function reverseData(data, element) {
         addChannels(data, element);
     });
 };
+
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value;
+    channelInfo.forEach(item => {
+        const isVisible = item.name.includes(value);
+        item.element.classList.toggle('hide', !isVisible);
+    });
+});
