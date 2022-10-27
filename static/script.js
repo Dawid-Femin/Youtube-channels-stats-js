@@ -4,6 +4,7 @@ const radioInputs = document.querySelectorAll('input[name="sort"]');
 const reverseButton = document.querySelector('#reverse');
 const searchInput = document.querySelector('.filter__input');
 const clearButton = document.querySelector('#clear');
+const invertButton = document.querySelector('#invert');
 
 let channelInfo = [];
 
@@ -17,6 +18,7 @@ function main() {
             sortData(data, channelsContainer);
             reverseData(data, channelsContainer);
             clearAll();
+            invert();
         });
 };
 
@@ -112,12 +114,40 @@ searchInput.addEventListener('input', (e) => {
     });
 });
 
-function clearAll(){
+function clearAll() {
     clearButton.addEventListener('click', () => {
         radioInputs.forEach(radioInput => {
             radioInput.checked = false;
         });
-        channelsContainer.innerHTML='';
+        // channelsContainer.innerHTML='';
         searchInput.value='';
     });
 };
+
+function invert() {
+    invertButton.addEventListener('click', () => {
+        let css = 'html {-webkit-filter: invert(100%);' +
+        '-moz-filter: invert(100%);' + 
+        '-o-filter: invert(100%);' + 
+        '-ms-filter: invert(100%); }',
+        head = document.getElementsByTagName('head')[0],
+        style = document.createElement('style')
+    
+      if (!window.counter) {
+        window.counter = 1
+      } else {
+        window.counter++
+        if (window.counter % 2 == 0) {
+          css ='html {-webkit-filter: invert(0%); -moz-filter: invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'
+        }
+      }
+    
+      style.type = 'text/css'
+      if (style.styleSheet) {
+        style.styleSheet.cssText = css
+      } else {
+        style.appendChild(document.createTextNode(css))
+      }
+      head.appendChild(style)
+    });
+  };
