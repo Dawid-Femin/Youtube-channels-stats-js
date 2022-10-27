@@ -1,7 +1,7 @@
 const channelsTemplate = document.querySelector('[channel-container-template]');
 const channelsContainer = document.querySelector('[data-channels-container]');
 const radioInputs = document.querySelectorAll('input[name="sort"]');
-
+const reverseButton = document.querySelector('#reverse');
 
 main();
 
@@ -12,6 +12,7 @@ function main() {
             // console.log(data);
             addChannels(data, channelsContainer);
             sortData(data, channelsContainer);
+            reverseData(data, channelsContainer);
         });
 };
 
@@ -87,4 +88,12 @@ function sortData(data, element) {
 function removeSign(value) {
     const replaceSign = value.replace(/\s /g,'').replace(/,/g,'').replace(/ /g,'').replace(/\./g,'');
     return Number(replaceSign);
+};
+
+function reverseData(data, element) {
+    reverseButton.addEventListener('click', () => {
+        data = data.reverse();
+        element.innerHTML = '';
+        addChannels(data, element);
+    });
 };
