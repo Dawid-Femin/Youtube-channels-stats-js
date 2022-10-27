@@ -1,1 +1,3 @@
 1. Zaczynam od dodania plików startowych do mojego projektu oraz instalacji wymaganych zależności.
+
+2. Następnie przeszedłem do zaimportowania danych za pomocą interfejsu fetch API oraz wyświetlenia wymaganych elementów. W tym celu tworzę funkcję addChannels(), gdzie przy pomocy template w strukturze HTML tworzę cały szkielet element. Dla zaimportowanych i wyświetlonych danych tworzę style zaczynając projektowanie od rozdzielczości na urządzenia typu mobile. Zgodnie z założeniami widoki zostały przygotowanie pod kątem responsywności, a główne rozdzielczości jakie brałem pod uwagę to 360px, 945px, 1280px oraz 1680px.

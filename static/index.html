@@ -9,7 +9,20 @@
         <header class="wrapper__header">
             <h1 class="header"><span class="header__js-logo"></span> Channels</h1>
         </header>
-        <main class="wrapper__main js-content">
+        <main class="wrapper__main js-content" data-channels-container>
+            <template channel-container-template>
+                <div class="singleCard">
+                    <a data-link>
+                        <img data-logo /> 
+                    </a>
+                    <h2 data-title></h2>
+                    <div class="details">
+                        <p><span class="info">SUBSCRIBERS:</span><br><span data-sub></span></p>
+                        <p><span class="info">VIDEOS:</span><br><span data-video></span></p>
+                        <p><span class="info">VIEWS:</span><br><span data-views></span></p>
+                    </div>
+                </div>
+            </template>
         </main>
         <div class="wrapper__filter">
             <div class="filter">
