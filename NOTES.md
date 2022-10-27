@@ -1,0 +1,1 @@
+1. Zaczynam od dodania plików startowych do mojego projektu oraz instalacji wymaganych zależności.
