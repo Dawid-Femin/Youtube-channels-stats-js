@@ -7,3 +7,5 @@
 4. Stworzyłem button reverse oraz pobrałem go za pomocą querySellector. Button umieściłem w prostej funkcji, gdzie do parametru wyświetlane dane i odwracam data za pomocą data.reverse(), kontener zawierający informacje o kanałach czyszczę, a następnie wywołuje funkcję tworzącą listę kanałów w odwróconej kolejności.
 
 5. Dalej przeszedłem do napisania funkcji odpowiedzialniej za filtrowanie danych po wpisaniu tekstu w polu input. W tym przypadku skorzystałem z wartości jaka została wpisana, następnie za pomocą forEach() przeiterowałem po channelInfo w celu sprawdzenia czy nazwa zawiera wartość wpisaną w input. Na tej podstawie elementom, które nie zawierały nazwy kanału dodawałem klasę hide, a te które zawierały nazwę pozostawały widoczne.
+
+6. Następnie stworzyłem funkcję, która czyści zawartość imputów typu radio oraz tekst wpisany w search bar jak i również czyści listę kanałów wcześniej wyświetlanych.

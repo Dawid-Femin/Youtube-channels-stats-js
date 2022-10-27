@@ -246,6 +246,11 @@ button:-moz-focusring {
 .hide {
   display: none;
 }
+
+.image__resize {
+  width: 50px;
+}
+
 /* Min-width: 360px */
 @media only screen and (min-width: 360px) {
   .wrapper__main {
@@ -255,7 +260,7 @@ button:-moz-focusring {
   
   .singleCard {
     flex-basis: 100%;
-    background-color: #ccc;
+    background-color: #fff;
     margin: 5px 0;
     text-align: center;
   }

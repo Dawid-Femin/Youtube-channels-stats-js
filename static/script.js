@@ -3,6 +3,7 @@ const channelsContainer = document.querySelector('[data-channels-container]');
 const radioInputs = document.querySelectorAll('input[name="sort"]');
 const reverseButton = document.querySelector('#reverse');
 const searchInput = document.querySelector('.filter__input');
+const clearButton = document.querySelector('#clear');
 
 let channelInfo = [];
 
@@ -12,10 +13,10 @@ function main() {
     fetch('./channels.json')
         .then(res => res.json())
         .then (data => {
-            // console.log(data);
             addChannels(data, channelsContainer);
             sortData(data, channelsContainer);
             reverseData(data, channelsContainer);
+            clearAll();
         });
 };
 
@@ -110,3 +111,13 @@ searchInput.addEventListener('input', (e) => {
         item.element.classList.toggle('hide', !isVisible);
     });
 });
+
+function clearAll(){
+    clearButton.addEventListener('click', () => {
+        radioInputs.forEach(radioInput => {
+            radioInput.checked = false;
+        });
+        channelsContainer.innerHTML='';
+        searchInput.value='';
+    });
+};
